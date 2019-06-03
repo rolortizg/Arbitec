@@ -1,0 +1,45 @@
+<form>
+  <div>
+    <div>
+      <input placeholder="Placeholder" [(ngModel)]="name" id="first_name" name="name" type="text" class="validate">
+      <label for="first_name">First Name</label>
+    </div>
+    <div>
+      <input name="lastName" [(ngModel)]="lastName" id="last_name" type="text" class="validate">
+      <label for="last_name">Last Name</label>
+    </div>
+  </div>
+  <div>
+    <div >
+      <input name="username" [(ngModel)]="username" id="text" type="text" class="validate">
+      <label for="text">Username</label>
+    </div>
+  </div>
+  <div>
+    <div>
+      <input name="email" [(ngModel)]="email" id="email" type="email" class="validate">
+      <label for="email">Email</label>
+    </div>
+  </div>
+  <div>
+    <div>
+      <input name="password" id="password" [(ngModel)]="password" type="password" class="validate">
+      <label for="password">Password</label>
+    </div>
+  </div>
+  <div>
+      <label>What is your role?</label>
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="VOTER">User</option>
+        <option value="PARTY">Musician</option>
+      </select>
+    
+  </div>
+  
+  <button (click)="handleSignup()" type="submit" name="action">Submit
+   
+  </button>
+
+</form>
+
