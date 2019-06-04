@@ -1,3 +1,30 @@
-<p>
-  login works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form >
+    <div>
+      <div>
+        <input name="email" [(ngModel)]="email" id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div>
+      <div>
+        <input name="password" id="password" [(ngModel)]="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <button (click)="handleLogin()" type="submit" name="action">Submit
+     
+    </button>
+    <!-- <button type="submit" (click)="handleSignup()">Signup</button>   -->
+  </form>
+ 
+</body>
+</html>

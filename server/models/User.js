@@ -9,21 +9,23 @@ const userSchema = new require('mongoose').Schema({
         type:String,
     },
     email: String,
-    cases:[{
-        type:Schema.Types.ObjectId,
-        ref:'Case'
-    }],
+    // cases:[{
+    //     type:Schema.Types.ObjectId,
+    //     ref:'case'
+    // }],
   
-    // image: String,
-   
-    // profile:{
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Profile'
-    // },
+    profile:{
+        type: Schema.Types.ObjectId,
+        ref: 'Profile'
+    },
     role:{
         type: String,
         default: 'USER'
     },
+    // party: {
+    //   type:Boolean,
+    //   default: true
+    // }
 },{
     timestamps:{
         createdAt: 'created_at',

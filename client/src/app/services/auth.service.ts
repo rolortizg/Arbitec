@@ -59,11 +59,5 @@ export class AuthService {
     .pipe(map((res: Response)=>res.json()))
   }
 
-  
-  follow(id){
-    return this.http.post(this.url + 'follow/' + id, id )
-    .pipe(map(res=>res.json()))
-  }
-
 
 }

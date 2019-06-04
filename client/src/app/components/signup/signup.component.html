@@ -1,45 +1,56 @@
-<form>
-  <div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form>
     <div>
-      <input placeholder="Placeholder" [(ngModel)]="name" id="first_name" name="name" type="text" class="validate">
-      <label for="first_name">First Name</label>
+      <div>
+        <input placeholder="Placeholder" [(ngModel)]="name" id="first_name" name="name" type="text" class="validate">
+        <label for="first_name">First Name</label>
+      </div>
+      <div>
+        <input name="lastName" [(ngModel)]="lastName" id="last_name" type="text" class="validate">
+        <label for="last_name">Last Name</label>
+      </div>
     </div>
     <div>
-      <input name="lastName" [(ngModel)]="lastName" id="last_name" type="text" class="validate">
-      <label for="last_name">Last Name</label>
+      <div >
+        <input name="username" [(ngModel)]="username" id="text" type="text" class="validate">
+        <label for="text">Username</label>
+      </div>
     </div>
-  </div>
-  <div>
-    <div >
-      <input name="username" [(ngModel)]="username" id="text" type="text" class="validate">
-      <label for="text">Username</label>
-    </div>
-  </div>
-  <div>
     <div>
-      <input name="email" [(ngModel)]="email" id="email" type="email" class="validate">
-      <label for="email">Email</label>
+      <div>
+        <input name="email" [(ngModel)]="email" id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
     </div>
-  </div>
-  <div>
     <div>
-      <input name="password" id="password" [(ngModel)]="password" type="password" class="validate">
-      <label for="password">Password</label>
+      <div>
+        <input name="password" id="password" [(ngModel)]="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
     </div>
-  </div>
-  <div>
-      <label>What is your role?</label>
-      <select>
-        <option value="" disabled selected>Choose your option</option>
-        <option value="VOTER">User</option>
-        <option value="PARTY">Musician</option>
-      </select>
+    <div>
+        <label>What is your role?</label>
+        <select [(ngModel)]="role" name="role">
+          <option value="" disabled selected>Choose your option</option>
+          <option [(ngValue)]="VOTER" value="VOTER">Voter</option>
+          <option [(ngValue)]="PARTY" value="PARTY">Party</option>
+        </select>
+      
+    </div>
     
-  </div>
+    <button (click)="handleSignup()" type="submit" name="action">Submit
+     
+    </button>
   
-  <button (click)="handleSignup()" type="submit" name="action">Submit
-   
-  </button>
-
-</form>
+  </form>
+</body>
+</html>
 
