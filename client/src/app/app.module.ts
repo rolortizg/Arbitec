@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 //routes
@@ -34,6 +35,7 @@ import { ProfileComponent } from './components/profile/profile.component'
     FormsModule,
     HttpModule,
     HttpClientModule,
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
   providers: [AuthService],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router, ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  user: any;
+  userToken:any;
   id:any
   account:any;
   hasAccount: boolean = true
@@ -25,8 +27,7 @@ export class LoginComponent implements OnInit {
     password: '',
     // products: [],
   } //object used for all authentication
-  user: any;
-  userToken:any;
+  
 
   constructor(
     private authService: AuthService,
@@ -52,6 +53,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userToken = JSON.parse(localStorage.getItem('userToken'))
+    if(localStorage.getItem('userToken')){
+      
+      this.router.navigate(['/profile/', this.userToken._id])
+    }
   }
 
 }

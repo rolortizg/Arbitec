@@ -1,3 +1,64 @@
-<p>
-  profile works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <header class="title-section">
+    <h1>{{profUser.name}} {{profUser.lastName}}</h1>
+    <p>{{user.username}}</p>
+  </header>
+
+  <!-- The statistics that vary for users -->
+  <section *ngIf="user.role == 'VOTER'">
+      <div>
+        <h4>Stats:</h4>
+        <p>Reputation: </p>
+        <p>Cases total:</p>
+        <p>Cases resolved:</p>
+        <p>Wins/losses: </p>
+      </div>
+  </section>
+  <!-- Decide which ones apply for parties -->
+  <section *ngIf="user.role == 'PARTY'">
+      <div>
+        <h4>Stats:</h4>
+        <p>Cases total:</p>
+        <p>Cases resolved:</p>
+        <p>Wins/losses: </p>
+      </div>
+  </section>
+
+  <!-- The columns change depending on user -->
+  <section *ngIf="user.role == 'VOTER'">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm c1">
+          Elected Cases
+        </div>
+        <div class="col-sm c2">
+          Open Cases
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section *ngIf="user.role == 'PARTY'">
+      <div class="container">
+          <div class="row">
+            <div class="col-sm c1">
+              Previous cases
+            </div>
+            <div class="col-sm c2">
+              Current case
+            </div>
+          </div>
+        </div>
+
+  </section>
+</body>
+</html>

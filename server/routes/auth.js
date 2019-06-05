@@ -49,20 +49,18 @@ router.get('/users',(req,res)=>{
     .catch(e=>(e))  
 })
 
-// router.get('/profile/:id', (req, res) => {
-//     User.findById(req.params.id)
-//     .populate('songs')
-//     .populate('liked')
-//     .populate('followers')
-//     .populate('following')
-//         .then(user => {
-//             if (!user) return res.status(404)
-//             return res.status(200).json(user);
-//         })
-//         .catch(err => {
-//             return res.status(500).json(err);
-//         });
-// });
+router.get('/profile/:id', (req, res) => {
+    User.findById(req.params.id)
+    .populate('cases')
+
+        .then(user => {
+            if (!user) return res.status(404)
+            return res.status(200).json(user);
+        })
+        .catch(err => {
+            return res.status(500).json(err);
+        });
+});
 
 // router.post('/follow/:id', (req,res,next)=>{
 //     User.findById(req.params.id)
